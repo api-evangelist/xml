@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/xml/refs/heads/main/json-schema/xml-element-schema.json",
+  "title": "XML Element",
+  "description": "JSON Schema describing the structure of an XML element including its qualified name, attributes, child nodes, and text content.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Local name of the element.",
+      "examples": ["title", "item", "Envelope"]
+    },
+    "namespaceURI": {
+      "type": "string",
+      "format": "uri",
+      "description": "Namespace URI in scope for this element.",
+      "examples": ["http://www.w3.org/2003/05/soap-envelope"]
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Namespace prefix used for this element (empty string for default namespace).",
+      "examples": ["", "xs", "soap"]
+    },
+    "qualifiedName": {
+      "type": "string",
+      "description": "Qualified name combining prefix and local name (e.g. xs:element).",
+      "examples": ["soap:Envelope", "xsl:template"]
+    },
+    "attributes": {
+      "type": "array",
+      "description": "Attributes declared on this element.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Local name of the attribute."
+          },
+          "namespaceURI": {
+            "type": "string",
+            "format": "uri",
+            "description": "Namespace URI of the attribute."
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Namespace prefix of the attribute."
+          },
+          "value": {
+            "type": "string",
+            "description": "Attribute value."
+          }
+        },
+        "required": ["name", "value"]
+      }
+    },
+    "children": {
+      "type": "array",
+      "description": "Child nodes (elements, text, CDATA, comments, processing instructions).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nodeType": {
+            "type": "string",
+            "description": "Type of XML node.",
+            "enum": ["element", "text", "cdata", "comment", "processing-instruction"]
+          },
+          "value": {
+            "description": "Node content. For element nodes, an XML Element object; for text/cdata/comment, a string; for processing instructions, an object with target and data."
+          }
+        },
+        "required": ["nodeType"]
+      }
+    },
+    "text": {
+      "type": "string",
+      "description": "Concatenated text content of the element (per XPath string-value)."
+    },
+    "selfClosing": {
+      "type": "boolean",
+      "description": "Whether the element is serialized using the self-closing form (e.g. <br/>).",
+      "default": false
+    },
+    "xmlLang": {
+      "type": "string",
+      "description": "xml:lang value declaring the language of the element content.",
+      "examples": ["en", "en-US", "fr"]
+    },
+    "xmlSpace": {
+      "type": "string",
+      "description": "xml:space value indicating whitespace handling.",
+      "enum": ["default", "preserve"]
+    },
+    "xmlBase": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "xml:base value providing a base URI for relative references."
+    },
+    "xmlId": {
+      "type": "string",
+      "description": "xml:id value uniquely identifying the element within the document."
+    }
+  },
+  "required": ["name"]
+}

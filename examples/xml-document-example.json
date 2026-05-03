@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "encoding": "UTF-8",
+  "standalone": false,
+  "rootElement": "catalog",
+  "namespaces": [
+    {
+      "prefix": "",
+      "uri": "http://example.com/catalog"
+    },
+    {
+      "prefix": "dc",
+      "uri": "http://purl.org/dc/elements/1.1/"
+    }
+  ],
+  "schemaLocation": "http://example.com/catalog https://example.com/schemas/catalog.xsd",
+  "processingInstructions": [
+    {
+      "target": "xml-stylesheet",
+      "data": "type=\"text/xsl\" href=\"catalog.xsl\""
+    }
+  ],
+  "validation": {
+    "wellFormed": true,
+    "valid": true,
+    "schemaType": "XSD"
+  },
+  "uri": "https://example.com/data/catalog.xml",
+  "created": "2026-05-03",
+  "modified": "2026-05-03"
+}

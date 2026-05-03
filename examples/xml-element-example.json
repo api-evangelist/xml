@@ -1,0 +1,51 @@
+{
+  "name": "book",
+  "namespaceURI": "http://example.com/catalog",
+  "prefix": "",
+  "qualifiedName": "book",
+  "attributes": [
+    {
+      "name": "id",
+      "value": "B-001"
+    },
+    {
+      "name": "lang",
+      "namespaceURI": "http://www.w3.org/XML/1998/namespace",
+      "prefix": "xml",
+      "value": "en"
+    }
+  ],
+  "children": [
+    {
+      "nodeType": "element",
+      "value": {
+        "name": "title",
+        "qualifiedName": "title",
+        "text": "XML in a Nutshell"
+      }
+    },
+    {
+      "nodeType": "element",
+      "value": {
+        "name": "creator",
+        "qualifiedName": "dc:creator",
+        "prefix": "dc",
+        "namespaceURI": "http://purl.org/dc/elements/1.1/",
+        "text": "Elliotte Rusty Harold"
+      }
+    },
+    {
+      "nodeType": "element",
+      "value": {
+        "name": "price",
+        "qualifiedName": "price",
+        "attributes": [
+          { "name": "currency", "value": "USD" }
+        ],
+        "text": "39.95"
+      }
+    }
+  ],
+  "selfClosing": false,
+  "xmlLang": "en"
+}

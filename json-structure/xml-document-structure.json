@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-structure.org/draft-01/json-structure-core.json",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/xml/refs/heads/main/json-structure/xml-document-structure.json",
+  "title": "XML Document Structure",
+  "description": "Structural reference describing the canonical hierarchy of an XML document: prolog, optional doctype declaration, optional processing instructions and comments, and a single root element with namespaces, attributes, and child content.",
+  "type": "object",
+  "properties": {
+    "prolog": {
+      "type": "object",
+      "description": "The XML declaration appearing at the beginning of the document.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "enum": ["1.0", "1.1"],
+          "description": "XML version."
+        },
+        "encoding": {
+          "type": "string",
+          "description": "Character encoding name."
+        },
+        "standalone": {
+          "type": "boolean",
+          "description": "Standalone document declaration."
+        }
+      },
+      "required": ["version"]
+    },
+    "doctype": {
+      "type": "object",
+      "description": "Optional Document Type Declaration.",
+      "properties": {
+        "name": { "type": "string" },
+        "publicId": { "type": "string" },
+        "systemId": { "type": "string" },
+        "internalSubset": { "type": "string" }
+      }
+    },
+    "miscBeforeRoot": {
+      "type": "array",
+      "description": "Comments and processing instructions allowed between the prolog and root element.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["comment", "processing-instruction"]
+          },
+          "value": { "type": "string" }
+        },
+        "required": ["kind"]
+      }
+    },
+    "rootElement": {
+      "type": "object",
+      "description": "The single root element of the document.",
+      "properties": {
+        "qualifiedName": { "type": "string" },
+        "namespaces": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "prefix": { "type": "string" },
+              "uri": { "type": "string", "format": "uri" }
+            },
+            "required": ["uri"]
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "value": { "type": "string" }
+            },
+            "required": ["name", "value"]
+          }
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nodeType": {
+                "type": "string",
+                "enum": ["element", "text", "cdata", "comment", "processing-instruction"]
+              }
+            },
+            "required": ["nodeType"]
+          }
+        }
+      },
+      "required": ["qualifiedName"]
+    },
+    "miscAfterRoot": {
+      "type": "array",
+      "description": "Comments and processing instructions allowed after the root element.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["comment", "processing-instruction"]
+          },
+          "value": { "type": "string" }
+        },
+        "required": ["kind"]
+      }
+    }
+  },
+  "required": ["prolog", "rootElement"]
+}

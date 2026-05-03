@@ -1,0 +1,143 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xml": "http://www.w3.org/XML/1998/namespace#",
+    "xmlns": "http://www.w3.org/2000/xmlns/",
+    "xs": "http://www.w3.org/2001/XMLSchema#",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance#",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xmlvocab": "https://github.com/api-evangelist/xml/blob/main/json-ld/xml-context.jsonld#",
+
+    "Document": {
+      "@id": "xmlvocab:Document",
+      "@type": "@id"
+    },
+    "Element": {
+      "@id": "xmlvocab:Element",
+      "@type": "@id"
+    },
+    "Attribute": {
+      "@id": "xmlvocab:Attribute",
+      "@type": "@id"
+    },
+    "Namespace": {
+      "@id": "xmlvocab:Namespace",
+      "@type": "@id"
+    },
+    "ProcessingInstruction": {
+      "@id": "xmlvocab:ProcessingInstruction",
+      "@type": "@id"
+    },
+    "DocumentType": {
+      "@id": "xmlvocab:DocumentType",
+      "@type": "@id"
+    },
+    "version": {
+      "@id": "dcterms:hasVersion"
+    },
+    "encoding": {
+      "@id": "xmlvocab:encoding"
+    },
+    "standalone": {
+      "@id": "xmlvocab:standalone",
+      "@type": "xs:boolean"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "description": {
+      "@id": "schema:description"
+    },
+    "rootElement": {
+      "@id": "xmlvocab:rootElement"
+    },
+    "qualifiedName": {
+      "@id": "xmlvocab:qualifiedName"
+    },
+    "namespaceURI": {
+      "@id": "xmlvocab:namespaceURI",
+      "@type": "@id"
+    },
+    "prefix": {
+      "@id": "xmlvocab:prefix"
+    },
+    "uri": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "attributes": {
+      "@id": "xmlvocab:attributes",
+      "@container": "@set"
+    },
+    "namespaces": {
+      "@id": "xmlvocab:namespaces",
+      "@container": "@set"
+    },
+    "children": {
+      "@id": "xmlvocab:children",
+      "@container": "@list"
+    },
+    "value": {
+      "@id": "rdf:value"
+    },
+    "text": {
+      "@id": "xmlvocab:text"
+    },
+    "doctype": {
+      "@id": "xmlvocab:doctype"
+    },
+    "publicId": {
+      "@id": "xmlvocab:publicId"
+    },
+    "systemId": {
+      "@id": "xmlvocab:systemId",
+      "@type": "@id"
+    },
+    "schemaLocation": {
+      "@id": "xmlvocab:schemaLocation"
+    },
+    "noNamespaceSchemaLocation": {
+      "@id": "xmlvocab:noNamespaceSchemaLocation",
+      "@type": "@id"
+    },
+    "validation": {
+      "@id": "xmlvocab:validation"
+    },
+    "wellFormed": {
+      "@id": "xmlvocab:wellFormed",
+      "@type": "xs:boolean"
+    },
+    "valid": {
+      "@id": "xmlvocab:valid",
+      "@type": "xs:boolean"
+    },
+    "schemaType": {
+      "@id": "xmlvocab:schemaType"
+    },
+    "xmlLang": {
+      "@id": "xml:lang"
+    },
+    "xmlSpace": {
+      "@id": "xml:space"
+    },
+    "xmlBase": {
+      "@id": "xml:base",
+      "@type": "@id"
+    },
+    "xmlId": {
+      "@id": "xml:id"
+    },
+    "created": {
+      "@id": "dcterms:created",
+      "@type": "xs:date"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xs:date"
+    }
+  }
+}

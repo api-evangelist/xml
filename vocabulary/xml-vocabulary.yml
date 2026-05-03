@@ -1,0 +1,266 @@
+aid: xml-vocabulary
+name: XML Vocabulary
+description: >-
+  Normative and domain vocabulary for XML (Extensible Markup Language), covering W3C
+  specification terms, document constructs, namespace concepts, validation mechanisms, and
+  the broader family of XML-based standards.
+created: '2026-05-03'
+modified: '2026-05-03'
+tags:
+  - Data Formats
+  - Document
+  - Markup Language
+  - Standard
+  - W3C
+  - XML
+
+terms:
+
+  # Core specification terms
+  - term: XML
+    definition: >-
+      Extensible Markup Language. A W3C Recommendation defining a general-purpose markup
+      language for encoding documents that are both human-readable and machine-readable.
+      First published in 1998.
+    category: Standard
+    aliases:
+      - Extensible Markup Language
+
+  - term: Document
+    definition: >-
+      A unit of XML data consisting of a single root element optionally preceded by an XML
+      declaration, processing instructions, comments, and a document type declaration.
+    category: Core Concept
+
+  - term: Element
+    definition: >-
+      The fundamental structural unit of an XML document, consisting of a start tag, content
+      (text or child nodes), and an end tag. Elements may be empty (self-closing).
+    category: Core Construct
+
+  - term: Attribute
+    definition: >-
+      A name-value pair appearing inside an element's start tag that supplies metadata about
+      the element. Attribute values are always strings in XML.
+    category: Core Construct
+
+  - term: Namespace
+    definition: >-
+      A URI-identified naming context that qualifies element and attribute names, allowing
+      vocabularies from different sources to be combined without name collisions. Defined
+      by Namespaces in XML 1.0.
+    category: Core Concept
+
+  - term: Prefix
+    definition: >-
+      A short alias bound to a namespace URI via an xmlns:prefix attribute. Prefixes are
+      used to qualify element and attribute names within a document.
+    category: Core Construct
+
+  - term: Default Namespace
+    definition: >-
+      A namespace declared without a prefix using xmlns="uri". Applies to unprefixed element
+      names within its scope. Does not apply to unprefixed attributes.
+    category: Core Construct
+
+  - term: Well-Formed
+    definition: >-
+      A document conforms to the XML grammar rules defined in the XML specification. Every
+      XML processor MUST reject documents that are not well-formed.
+    category: Conformance
+
+  - term: Valid
+    definition: >-
+      A well-formed document that additionally conforms to a specified DTD or schema. Validity
+      is optional in XML; well-formedness is not.
+    category: Conformance
+
+  - term: XML Declaration
+    definition: >-
+      The optional <?xml version="1.0" encoding="UTF-8"?> processing instruction at the
+      start of a document declaring the XML version and character encoding.
+    category: Core Construct
+
+  - term: Processing Instruction
+    definition: >-
+      A construct of the form <?target data?> used to convey instructions to applications
+      processing the document. The xml-stylesheet PI is the most widely deployed example.
+    category: Core Construct
+
+  - term: Comment
+    definition: >-
+      A non-content note bracketed by <!-- and -->. Comments are visible to applications
+      but are not part of the document's character data.
+    category: Core Construct
+
+  - term: CDATA Section
+    definition: >-
+      A construct of the form <![CDATA[ ... ]]> that allows characters which would otherwise
+      need to be escaped (such as <, >, &) to appear literally inside element content.
+    category: Core Construct
+
+  - term: Entity
+    definition: >-
+      A named storage unit of data — characters, markup, or external content — that can be
+      referenced from within the document using &name; syntax.
+    category: Core Construct
+
+  - term: DTD
+    definition: >-
+      Document Type Definition. A grammar describing the legal structure of an XML document
+      using element and attribute declarations. The original schema language for XML, defined
+      in the XML specification itself.
+    category: Schema Language
+    aliases:
+      - Document Type Definition
+
+  - term: XML Schema
+    definition: >-
+      A W3C Recommendation (XSD) defining a more powerful schema language for XML using an
+      XML-based syntax. Adds typed simple values, complex types, keys, and assertions.
+    category: Schema Language
+    aliases:
+      - XSD
+      - XML Schema Definition
+
+  - term: RELAX NG
+    definition: >-
+      An ISO/IEC 19757-2 schema language for XML using a simpler grammar-based design than
+      XSD. Available in XML and compact (non-XML) syntaxes.
+    category: Schema Language
+
+  - term: Schematron
+    definition: >-
+      An ISO/IEC 19757-3 rule-based validation language for XML using XPath assertions.
+      Often combined with XSD or RELAX NG to enforce co-occurrence and content rules.
+    category: Schema Language
+
+  - term: XPath
+    definition: >-
+      A W3C Recommendation expression language for navigating and selecting nodes within an
+      XML document. Used by XSLT, XQuery, XPointer, and many XML APIs.
+    category: Related Standard
+    aliases:
+      - XML Path Language
+
+  - term: XSLT
+    definition: >-
+      Extensible Stylesheet Language Transformations. A W3C Recommendation for transforming
+      XML documents into other formats using template rules and XPath expressions.
+    category: Related Standard
+    aliases:
+      - Extensible Stylesheet Language Transformations
+
+  - term: XQuery
+    definition: >-
+      A W3C Recommendation query language designed to query collections of XML data. Shares
+      its data model and type system with XPath and XSLT.
+    category: Related Standard
+
+  - term: XLink
+    definition: >-
+      A W3C Recommendation defining XML attributes that create and describe links between
+      resources, supporting simple and extended (multi-ended) linking.
+    category: Related Standard
+
+  - term: XPointer
+    definition: >-
+      A W3C Recommendation framework for identifying fragments of XML documents within a URI,
+      extending the URI fragment-identifier syntax.
+    category: Related Standard
+
+  - term: SOAP
+    definition: >-
+      Simple Object Access Protocol. A W3C Recommendation defining an XML-based messaging
+      framework for exchanging structured information in web services.
+    category: Application
+
+  - term: WSDL
+    definition: >-
+      Web Services Description Language. A W3C Recommendation for describing the interface
+      of an XML-based web service.
+    category: Application
+    aliases:
+      - Web Services Description Language
+
+  - term: XHTML
+    definition: >-
+      Extensible HyperText Markup Language. A reformulation of HTML as an XML application,
+      published as a W3C Recommendation.
+    category: Application
+
+  - term: SVG
+    definition: >-
+      Scalable Vector Graphics. A W3C Recommendation defining an XML-based language for
+      describing two-dimensional vector graphics.
+    category: Application
+    aliases:
+      - Scalable Vector Graphics
+
+  - term: RSS
+    definition: >-
+      A family of XML-based syndication formats for publishing frequently updated content
+      such as blog entries, news headlines, and podcasts.
+    category: Application
+    aliases:
+      - Really Simple Syndication
+
+  - term: Atom
+    definition: >-
+      An IETF-standardized XML-based syndication format (RFC 4287) and protocol for publishing
+      and editing web resources (RFC 5023).
+    category: Application
+
+  - term: DOM
+    definition: >-
+      Document Object Model. A W3C Recommendation defining a tree-based programming interface
+      for accessing and manipulating XML and HTML documents.
+    category: Programming Interface
+    aliases:
+      - Document Object Model
+
+  - term: SAX
+    definition: >-
+      Simple API for XML. An event-driven, streaming programming interface for parsing XML
+      documents, originally developed for Java and widely ported.
+    category: Programming Interface
+    aliases:
+      - Simple API for XML
+
+  - term: StAX
+    definition: >-
+      Streaming API for XML. A pull-parsing programming interface for XML, providing iterator
+      and cursor models for traversing documents.
+    category: Programming Interface
+
+  - term: XInclude
+    definition: >-
+      A W3C Recommendation defining a mechanism for merging the contents of one XML document
+      into another, using xi:include elements.
+    category: Related Standard
+
+  - term: Canonical XML
+    definition: >-
+      A W3C Recommendation defining a normalized serialization of XML documents, used to
+      enable byte-for-byte comparison and digital signatures.
+    category: Related Standard
+
+  - term: XML Signature
+    definition: >-
+      A W3C Recommendation defining XML syntax and processing rules for creating and verifying
+      digital signatures over XML and other resources.
+    category: Security
+
+  - term: XML Encryption
+    definition: >-
+      A W3C Recommendation defining XML syntax and processing rules for encrypting data and
+      representing the result in XML.
+    category: Security
+
+  - term: W3C
+    definition: >-
+      World Wide Web Consortium. The international standards organization that publishes and
+      maintains XML and many related specifications.
+    category: Governance
+    aliases:
+      - World Wide Web Consortium

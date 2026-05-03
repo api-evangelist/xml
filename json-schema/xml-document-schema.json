@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/xml/refs/heads/main/json-schema/xml-document-schema.json",
+  "title": "XML Document",
+  "description": "JSON Schema describing the metadata and high-level structure of an XML document, including version, encoding, namespaces, doctype declaration, processing instructions, and the root element.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "XML version declared in the XML declaration.",
+      "enum": ["1.0", "1.1"],
+      "default": "1.0",
+      "examples": ["1.0"]
+    },
+    "encoding": {
+      "type": "string",
+      "description": "Character encoding declared in the XML declaration.",
+      "default": "UTF-8",
+      "examples": ["UTF-8", "UTF-16", "ISO-8859-1"]
+    },
+    "standalone": {
+      "type": "boolean",
+      "description": "Whether the document is standalone (no external markup declarations affect the content)."
+    },
+    "doctype": {
+      "type": "object",
+      "description": "Document Type Declaration (DOCTYPE) information.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Root element name declared in the DOCTYPE."
+        },
+        "publicId": {
+          "type": "string",
+          "description": "Public identifier of the external DTD subset."
+        },
+        "systemId": {
+          "type": "string",
+          "format": "uri-reference",
+          "description": "System identifier (URI) of the external DTD subset."
+        }
+      }
+    },
+    "processingInstructions": {
+      "type": "array",
+      "description": "Processing instructions declared at the document root.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "description": "Processing instruction target (e.g. xml-stylesheet)."
+          },
+          "data": {
+            "type": "string",
+            "description": "Processing instruction data."
+          }
+        },
+        "required": ["target"]
+      }
+    },
+    "namespaces": {
+      "type": "array",
+      "description": "Namespace declarations in scope on the root element.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "description": "Namespace prefix (empty string for default namespace).",
+            "examples": ["", "xs", "xsl", "soap"]
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "description": "Namespace URI.",
+            "examples": ["http://www.w3.org/2001/XMLSchema"]
+          }
+        },
+        "required": ["uri"]
+      }
+    },
+    "rootElement": {
+      "type": "string",
+      "description": "Local name of the root element.",
+      "examples": ["catalog", "soap:Envelope", "feed"]
+    },
+    "schemaLocation": {
+      "type": "string",
+      "description": "Optional xsi:schemaLocation value pairing namespaces to schema URIs."
+    },
+    "noNamespaceSchemaLocation": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Optional xsi:noNamespaceSchemaLocation value for documents without a target namespace."
+    },
+    "validation": {
+      "type": "object",
+      "description": "Validation status and metadata for the document.",
+      "properties": {
+        "wellFormed": {
+          "type": "boolean",
+          "description": "Whether the document is well-formed per the XML specification."
+        },
+        "valid": {
+          "type": "boolean",
+          "description": "Whether the document is valid against the declared DTD or schema."
+        },
+        "schemaType": {
+          "type": "string",
+          "description": "Type of schema used for validation.",
+          "enum": ["DTD", "XSD", "RelaxNG", "Schematron", "None"]
+        }
+      }
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "URI of the XML document."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the document was created."
+    },
+    "modified": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the document was last modified."
+    }
+  },
+  "required": ["version", "rootElement"]
+}
