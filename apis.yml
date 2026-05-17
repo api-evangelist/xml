@@ -105,9 +105,9 @@ common:
     url: https://www.w3.org/TR/xml/
   - type: Specification
     url: https://www.w3.org/TR/xml/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/w3c
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/w3c/xml
   - type: JSONSchema
     url: >-
