@@ -1,5 +1,6 @@
 aid: xml
 name: XML
+kind: topic
 description: >-
   XML (Extensible Markup Language) is a W3C standard markup language and data format that
   defines rules for encoding documents in a way that is both human-readable and machine-readable.
