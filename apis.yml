@@ -36,6 +36,14 @@ type: Index
 url: https://www.w3.org/XML/
 tags:
   - Data Formats
+  - Documents
+  - Markup Language
+  - Standards
+  - W3C
+  - Web Services
+  - XML
+tags_raw:
+  - Data Formats
   - Document
   - Markup Language
   - Standard
@@ -56,6 +64,12 @@ apis:
       comments, and entities) that all XML technologies build upon.
     humanURL: https://www.w3.org/TR/xml/
     tags:
+      - Documents
+      - Markup Language
+      - Standards
+      - W3C
+      - XML
+    tags_raw:
       - Document
       - Markup Language
       - Standard
@@ -75,6 +89,12 @@ apis:
       remains the dominant version used in production systems.
     humanURL: https://www.w3.org/TR/xml11/
     tags:
+      - Documents
+      - Markup Language
+      - Standards
+      - W3C
+      - XML
+    tags_raw:
       - Document
       - Markup Language
       - Standard
@@ -96,6 +116,11 @@ apis:
     humanURL: https://www.w3.org/TR/xml-names/
     tags:
       - Namespaces
+      - Standards
+      - W3C
+      - XML
+    tags_raw:
+      - Namespaces
       - Standard
       - W3C
       - XML
@@ -113,6 +138,12 @@ apis:
       keys/keyrefs, assertions, and conditional type assignment.
     humanURL: https://www.w3.org/XML/Schema
     tags:
+      - Schema
+      - Standards
+      - Validation
+      - W3C
+      - XML
+    tags_raw:
       - Schema
       - Standard
       - Validation
